@@ -1,0 +1,5 @@
+node_modules/
+biome.json
+package.json
+package-lock.json
+assets/
