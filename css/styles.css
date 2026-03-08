@@ -1,0 +1,560 @@
+/* ===== Base / Reset ===== */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #030c01;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+}
+
+/* ===== Common ===== */
+
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #030c01;
+  background: linear-gradient(
+    135deg,
+    rgba(232, 232, 28, 1) 0%,
+    rgba(66, 237, 19, 1) 100%
+  );
+  border: 1px solid transparent;
+  border-radius: 100px;
+  transition: opacity 0.3s;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.5;
+}
+
+/* ===== Header ===== */
+
+.header {
+  background-color: #fff;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  height: 72px;
+  padding: 0 80px;
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav-link {
+  font-size: 16px;
+  line-height: 1.5;
+  transition: opacity 0.3s;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus {
+  opacity: 0.6;
+}
+
+.header-button {
+  display: inline-block;
+  padding: 8px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #030c01;
+  background: linear-gradient(
+    135deg,
+    rgba(232, 232, 28, 1) 0%,
+    rgba(66, 237, 19, 1) 100%
+  );
+  border-radius: 100px;
+  margin-left: auto;
+  transition: opacity 0.3s;
+}
+
+.header-button:hover,
+.header-button:focus {
+  opacity: 0.5;
+}
+
+.header-menu-button {
+  display: none;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 669px;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 24px;
+  padding: 80px 64px 80px 80px;
+  width: 811px;
+}
+
+.hero-title {
+  font-family: "Hanuman", serif;
+  font-size: 56px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ===== About ===== */
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 92px 64px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1;
+}
+
+.about-icon {
+  width: 96px;
+  height: 85px;
+}
+
+.about-title {
+  font-family: "Hanuman", serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.about-image {
+  flex: 1;
+  border-radius: 16px;
+  object-fit: cover;
+  height: 428px;
+}
+
+/* ===== Bestsellers ===== */
+
+.bestsellers {
+  padding: 92px 64px;
+}
+
+.bestsellers-title {
+  font-family: "Hanuman", serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.bestsellers-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.bestsellers-list {
+  display: flex;
+  gap: 32px;
+}
+
+.bestsellers-item {
+  flex: 0 0 405px;
+}
+
+.bestsellers-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bestsellers-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.bestsellers-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(3, 12, 1, 0.15);
+}
+
+.bestsellers-arrows {
+  display: flex;
+  gap: 16px;
+}
+
+.slider-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(3, 12, 1, 0.15);
+  transition: opacity 0.3s;
+}
+
+.slider-arrow:hover,
+.slider-arrow:focus {
+  opacity: 0.6;
+}
+
+/* ===== Product Card ===== */
+
+.product-card-image {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.product-card-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+.product-card-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.product-card-price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* ===== Bouquets ===== */
+
+.bouquets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 92px 64px;
+}
+
+.bouquets-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.bouquets-title {
+  font-family: "Hanuman", serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.bouquets-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.bouquets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px 32px;
+}
+
+.bouquets-item {
+  flex: 1 1 calc(25% - 24px);
+  min-width: 0;
+}
+
+.bouquets-item .product-card-image {
+  height: 296px;
+}
+
+/* ===== Testimonials ===== */
+
+.testimonials {
+  padding: 92px 64px;
+}
+
+.testimonials-title {
+  font-family: "Hanuman", serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.testimonials-list {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.testimonials-item {
+  flex: 1;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid rgba(3, 12, 1, 0.15);
+  border-radius: 16px;
+  height: 228px;
+}
+
+.testimonial-card-quote {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.testimonial-card-author {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ===== Contact ===== */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 92px 64px;
+}
+
+.contact-content {
+  display: flex;
+  gap: 80px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.contact-tagline {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-title {
+  font-family: "Hanuman", serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.contact-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-detail-title {
+  font-family: "Hanuman", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.contact-detail-link {
+  font-size: 16px;
+  line-height: 1.5;
+  transition: opacity 0.3s;
+}
+
+.contact-detail-link:hover,
+.contact-detail-link:focus {
+  opacity: 0.6;
+}
+
+.contact-detail-address {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ===== Footer ===== */
+
+.footer {
+  background-color: #eeee60;
+  padding: 80px 64px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-nav-link {
+  font-size: 16px;
+  line-height: 1.5;
+  transition: opacity 0.3s;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  opacity: 0.6;
+}
+
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  opacity: 0.6;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(3, 12, 1, 0.15);
+}
+
+.footer-copyright {
+  font-size: 14px;
+  line-height: 1.5;
+}
