@@ -1,52 +1,25 @@
-/* ===== Base / Reset ===== */
+/* ===== CSS Variables ===== */
+
+:root {
+  --color-primary: #030c01;
+  --color-white: #fff;
+  --color-gradient-yellow: rgba(232, 232, 28, 1);
+  --color-gradient-green: rgba(66, 237, 19, 1);
+  --color-border: rgba(3, 12, 1, 0.15);
+  --color-footer-bg: #eeee60;
+
+  --font-primary: "Roboto", sans-serif;
+  --font-heading: "Hanuman", serif;
+}
+
+/* ===== Base ===== */
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.5;
-  color: #030c01;
-  background-color: #fff;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-address {
-  font-style: normal;
-}
-
-button {
-  font: inherit;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-hr {
-  border: none;
+  color: var(--color-primary);
+  background-color: var(--color-white);
 }
 
 /* ===== Common ===== */
@@ -57,14 +30,15 @@ hr {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #030c01;
+  color: var(--color-primary);
   background: linear-gradient(
     135deg,
-    rgba(232, 232, 28, 1) 0%,
-    rgba(66, 237, 19, 1) 100%
+    var(--color-gradient-yellow) 0%,
+    var(--color-gradient-green) 100%
   );
   border: 1px solid transparent;
   border-radius: 100px;
+  cursor: pointer;
   transition: opacity 0.3s;
 }
 
@@ -76,7 +50,7 @@ hr {
 /* ===== Header ===== */
 
 .header {
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .header-nav {
@@ -116,11 +90,11 @@ hr {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #030c01;
+  color: var(--color-primary);
   background: linear-gradient(
     135deg,
-    rgba(232, 232, 28, 1) 0%,
-    rgba(66, 237, 19, 1) 100%
+    var(--color-gradient-yellow) 0%,
+    var(--color-gradient-green) 100%
   );
   border-radius: 100px;
   margin-left: auto;
@@ -159,7 +133,7 @@ hr {
 }
 
 .hero-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 56px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -198,7 +172,7 @@ hr {
 }
 
 .about-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -223,7 +197,7 @@ hr {
 }
 
 .bestsellers-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -261,7 +235,11 @@ hr {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: rgba(3, 12, 1, 0.15);
+  background-color: var(--color-border);
+}
+
+.bestsellers-dot.is-active {
+  background-color: var(--color-primary);
 }
 
 .bestsellers-arrows {
@@ -276,7 +254,7 @@ hr {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(3, 12, 1, 0.15);
+  border: 1px solid var(--color-border);
   transition: opacity 0.3s;
 }
 
@@ -331,7 +309,7 @@ hr {
 }
 
 .bouquets-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -364,7 +342,7 @@ hr {
 }
 
 .testimonials-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -386,7 +364,7 @@ hr {
   justify-content: space-between;
   gap: 24px;
   padding: 32px;
-  border: 1px solid rgba(3, 12, 1, 0.15);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
   height: 228px;
 }
@@ -431,7 +409,7 @@ hr {
 }
 
 .contact-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -462,7 +440,7 @@ hr {
 }
 
 .contact-detail-title {
-  font-family: "Hanuman", serif;
+  font-family: var(--font-heading);
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -493,7 +471,7 @@ hr {
 /* ===== Footer ===== */
 
 .footer {
-  background-color: #eeee60;
+  background-color: var(--color-footer-bg);
   padding: 80px 64px;
 }
 
@@ -551,7 +529,7 @@ hr {
 }
 
 .footer-divider {
-  border-top: 1px solid rgba(3, 12, 1, 0.15);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-copyright {
