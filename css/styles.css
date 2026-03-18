@@ -1,3 +1,107 @@
+@font-face {
+  font-family: "Hanuman";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0sd5xDs.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Hanuman";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0v64BDs.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Hanuman";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0u04BDs.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf)
+    format("truetype");
+}
+
+/* ===== CSS Reset ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+}
+
 /* ===== CSS Variables ===== */
 
 :root {
@@ -25,16 +129,10 @@ body {
 /* ===== Common ===== */
 
 .container {
-  max-width: 1280px;
+  max-width: 1336px;
   width: 100%;
-  padding: 0 16px;
+  padding: 0 28px;
   margin: 0 auto;
-}
-
-@media screen and (min-width: 1312px) {
-  .container {
-    padding: 0;
-  }
 }
 
 .section {
@@ -150,13 +248,11 @@ body {
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 768px;
+  max-width: 667px;
 }
 
 .hero-title {
+  margin-bottom: 24px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 56px;
@@ -165,13 +261,11 @@ body {
 }
 
 .hero-text-wrapper {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
 }
 
 .hero-text {
+  margin-bottom: 32px;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -185,18 +279,17 @@ body {
 }
 
 .about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
   flex: 1;
 }
 
 .about-icon {
+  margin-bottom: 32px;
   width: 96px;
   height: 85px;
 }
 
 .about-title {
+  margin-bottom: 32px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 48px;
@@ -227,13 +320,11 @@ body {
 }
 
 .bestsellers-content {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
   margin-top: 32px;
 }
 
 .bestsellers-list {
+  margin-bottom: 48px;
   display: flex;
   gap: 32px;
   overflow: hidden;
@@ -318,23 +409,17 @@ body {
 
 /* ===== Bouquets ===== */
 
-.bouquets-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
+/* .bouquets-container */
 
 .bouquets-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 16px;
   max-width: 768px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .bouquets-title {
+  margin-bottom: 16px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 48px;
@@ -348,6 +433,7 @@ body {
 }
 
 .bouquets-list {
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 64px 32px;
@@ -363,10 +449,12 @@ body {
 }
 
 .bouquets-button {
+  display: block;
   padding: 10px 24px;
-  min-width: 406px;
+  width: 406px;
   font-size: 16px;
   text-align: center;
+  margin: 0 auto;
 }
 
 /* ===== Testimonials ===== */
@@ -430,30 +518,29 @@ body {
 /* ===== Contact ===== */
 
 .contact-container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  display: block;
 }
 
 .contact-content {
+  margin-bottom: 32px;
   display: flex;
   gap: 80px;
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   flex: 1;
 }
 
 .contact-tagline {
+  display: block;
+  margin-bottom: 16px;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
 }
 
 .contact-title {
+  margin-bottom: 16px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 48px;
@@ -475,17 +562,17 @@ body {
 }
 
 .contact-detail {
+  margin-bottom: 32px;
   display: flex;
   gap: 16px;
 }
 
 .contact-detail-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: block;
 }
 
 .contact-detail-title {
+  margin-bottom: 8px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 18px;
