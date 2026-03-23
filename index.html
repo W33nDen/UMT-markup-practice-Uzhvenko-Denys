@@ -8,6 +8,7 @@
       content="Flora — Brighten Your Day with Our Stunning Bouquets. Expertly crafted flower arrangements for every occasion."
     />
     <title>Flora — Flower Bouquets</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
     <link
       rel="stylesheet"
@@ -20,13 +21,10 @@
     <header class="header">
       <div class="container">
         <nav class="header-nav">
-          <a class="header-logo-link" href="#">
-            <img
-              src="./images/logo.svg"
-              width="90"
-              height="36"
-              alt="Flora logo"
-            />
+          <a class="header-logo-link" href="#" aria-label="Home">
+            <svg class="icon-logo" width="90" height="36" aria-hidden="true">
+              <use href="./images/icons.svg#icon-logo"></use>
+            </svg>
           </a>
 
           <ul class="header-nav-list">
@@ -55,15 +53,8 @@
     <main>
       <!-- Hero -->
       <section class="hero" id="hero">
-        <img
-          class="hero-image"
-          src="./images/rectangle-1.jpg"
-          width="1440"
-          height="570"
-          alt="Colorful flower arrangement background"
-        />
         <div class="container hero-container">
-          <div class="hero-content">
+          <div class="hero-content" data-aos="fade-up">
             <h1 class="hero-title">
               Brighten Your Day with Our Stunning Bouquets
             </h1>
@@ -84,14 +75,10 @@
       <!-- About Us -->
       <section class="about section" id="about">
         <div class="container about-container">
-          <div class="about-content">
-            <img
-              class="about-icon"
-              src="./images/flower.svg"
-              width="48"
-              height="48"
-              alt=""
-            />
+          <div class="about-content" data-aos="fade-right">
+            <svg class="about-icon" width="96" height="85" aria-hidden="true">
+              <use href="./images/icons.svg#icon-flower"></use>
+            </svg>
 
             <h2 class="about-title">Our Passion for Floral Artistry</h2>
 
@@ -104,6 +91,7 @@
 
           <img
             class="about-image"
+            data-aos="fade-left"
             src="./images/elevated-view-female-florist-arranging-white-peony-flowers-shop-large.jpg"
             width="616"
             alt="Florist arranging white peony flowers in a shop"
@@ -117,7 +105,7 @@
           <h2 class="bestsellers-title">Top-Selling Bouquets</h2>
 
           <div class="bestsellers-content">
-            <ul class="bestsellers-list">
+            <ul class="bestsellers-list" data-aos="fade-up">
               <li class="bestsellers-item">
                 <article class="product-card">
                   <img
@@ -211,24 +199,28 @@
                   type="button"
                   aria-label="Previous slide"
                 >
-                  <img
-                    src="./images/left-arrow-alt.svg"
+                  <svg
+                    class="icon-arrow"
                     width="24"
                     height="24"
-                    alt=""
-                  />
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-left-arrow-alt"></use>
+                  </svg>
                 </button>
                 <button
                   class="slider-arrow"
                   type="button"
                   aria-label="Next slide"
                 >
-                  <img
-                    src="./images/right-arrow-alt.svg"
+                  <svg
+                    class="icon-arrow"
                     width="24"
                     height="24"
-                    alt=""
-                  />
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-right-arrow-alt"></use>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -246,7 +238,7 @@
             </p>
           </div>
 
-          <ul class="bouquets-list">
+          <ul class="bouquets-list" data-aos="fade-up">
             <!-- Row 1 -->
             <li class="bouquets-item">
               <article class="product-card">
@@ -411,9 +403,51 @@
         <div class="container testimonials-container">
           <h2 class="testimonials-title">What our clients says</h2>
 
-          <ul class="testimonials-list">
+          <ul class="testimonials-list" data-aos="fade-up">
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     "Flora made my anniversary unforgettable with their
@@ -427,6 +461,48 @@
 
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     Absolutely stunning bouquet! It looked even better than the
@@ -440,6 +516,48 @@
 
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     The service was exceptional, and the flowers were fresh!
@@ -452,6 +570,48 @@
 
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     Ordered a last-minute gift and was amazed by how fast and
@@ -465,6 +625,48 @@
 
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     Every flower was perfect. You can feel the care and love in
@@ -478,6 +680,48 @@
 
             <li class="testimonials-item">
               <article class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                  <svg
+                    class="icon-star"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
                 <blockquote class="testimonial-card-quote">
                   <p>
                     Flora helped make my friend's birthday extra special. She
@@ -497,24 +741,28 @@
                 type="button"
                 aria-label="Previous slide"
               >
-                <img
-                  src="./images/left-arrow-alt.svg"
+                <svg
+                  class="icon-arrow"
                   width="24"
                   height="24"
-                  alt=""
-                />
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-left-arrow-alt"></use>
+                </svg>
               </button>
               <button
                 class="slider-arrow"
                 type="button"
                 aria-label="Next slide"
               >
-                <img
-                  src="./images/right-arrow-alt.svg"
+                <svg
+                  class="icon-arrow"
                   width="24"
                   height="24"
-                  alt=""
-                />
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-right-arrow-alt"></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -524,7 +772,7 @@
       <!-- Contact -->
       <section class="contact section" id="contacts">
         <div class="container contact-container">
-          <div class="contact-content">
+          <div class="contact-content" data-aos="fade-right">
             <div class="contact-info">
               <span class="contact-tagline">Connect</span>
 
@@ -538,7 +786,14 @@
 
             <div class="contact-details">
               <div class="contact-detail">
-                <img src="./images/phone.svg" width="24" height="24" alt="" />
+                <svg
+                  class="icon-contact"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
                 <div class="contact-detail-content">
                   <h3 class="contact-detail-title">Phone</h3>
                   <a class="contact-detail-link" href="tel:+15551234567"
@@ -548,7 +803,14 @@
               </div>
 
               <div class="contact-detail">
-                <img src="./images/map.svg" width="24" height="24" alt="" />
+                <svg
+                  class="icon-contact"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-map"></use>
+                </svg>
                 <div class="contact-detail-content">
                   <h3 class="contact-detail-title">Store</h3>
                   <address class="contact-detail-address">
@@ -561,6 +823,7 @@
 
           <img
             class="contact-image"
+            data-aos="fade-left"
             src="./images/photo-florist-holding-beautiful-flowers-flower-shop.jpg"
             width="1280"
             height="720"
@@ -574,13 +837,10 @@
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-top">
-          <a class="footer-logo-link" href="#">
-            <img
-              src="./images/logo.svg"
-              width="90"
-              height="36"
-              alt="Flora logo"
-            />
+          <a class="footer-logo-link" href="#" aria-label="Home">
+            <svg class="icon-logo" width="294" height="126" aria-hidden="true">
+              <use href="./images/icons.svg#icon-logo"></use>
+            </svg>
           </a>
 
           <ul class="footer-nav-list">
@@ -602,22 +862,26 @@
           <ul class="footer-social-list">
             <li>
               <a class="footer-social-link" href="#" aria-label="Facebook">
-                <img
-                  src="./images/facebook.svg"
+                <svg
+                  class="icon-social"
                   width="24"
                   height="24"
-                  alt="Facebook"
-                />
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
               </a>
             </li>
             <li>
               <a class="footer-social-link" href="#" aria-label="Instagram">
-                <img
-                  src="./images/instagram.svg"
+                <svg
+                  class="icon-social"
                   width="24"
                   height="24"
-                  alt="Instagram"
-                />
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
               </a>
             </li>
             <li>
@@ -633,5 +897,9 @@
         <p class="footer-copyright">&copy; 2025 Flora. All rights reserved.</p>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+    </script>
   </body>
 </html>
