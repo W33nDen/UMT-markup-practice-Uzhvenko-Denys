@@ -141,7 +141,9 @@ body {
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 24px;
   font-weight: 500;
   font-size: 16px;
@@ -157,15 +159,53 @@ body {
   cursor: pointer;
   transition:
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.5;
+}
+
+.button:active {
+  background: #4e544d;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid rgba(3, 12, 1, 0.15);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  opacity: 0.5;
+  background: transparent;
+}
+
+.button-secondary:active {
+  background: #4e544d;
+  color: #ffffff;
+  opacity: 1;
+  border-color: #4e544d;
+}
+
+.button-secondary:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  background: transparent;
 }
 
 /* ===== Header ===== */
@@ -209,29 +249,7 @@ body {
 }
 
 .header-button {
-  display: inline-block;
   padding: 8px 20px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-primary);
-  background: linear-gradient(
-    135deg,
-    var(--color-gradient-yellow) 0%,
-    var(--color-gradient-green) 100%
-  );
-  border-radius: 100px;
-  transition:
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-button:hover,
-.header-button:focus {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header-menu-button {
@@ -245,8 +263,12 @@ body {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
     url("../images/rectangle-1.jpg");
-  background-size: 100% 100%, 1440px auto;
-  background-position: center, right center;
+  background-size:
+    100% 100%,
+    1440px auto;
+  background-position:
+    center,
+    right center;
   background-repeat: no-repeat, no-repeat;
 }
 
@@ -381,12 +403,28 @@ body {
   height: 48px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slider-arrow:hover,
 .slider-arrow:focus {
-  opacity: 0.6;
+  background-color: #d9fbcf;
+  opacity: 1;
+}
+
+.slider-arrow:active {
+  background-color: #7af259;
+  opacity: 1;
+}
+
+.slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: var(--color-white);
 }
 
 /* ===== Product Card ===== */
