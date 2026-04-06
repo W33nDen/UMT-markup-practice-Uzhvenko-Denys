@@ -107,9 +107,9 @@ hr {
 :root {
   --color-primary: #030c01;
   --color-white: #fff;
-  --color-gradient-yellow: rgba(232, 232, 28, 1);
-  --color-gradient-green: rgba(66, 237, 19, 1);
-  --color-border: rgba(3, 12, 1, 0.15);
+  --color-gradient-yellow: rgb(232 232 28);
+  --color-gradient-green: rgb(66 237 19);
+  --color-border: rgb(3 12 1 / 0.15);
   --color-footer-bg: #eeee60;
 
   --font-primary: "Roboto", sans-serif;
@@ -177,7 +177,7 @@ body {
 
 .button:active {
   background: #4e544d;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
 }
 
@@ -189,7 +189,7 @@ body {
 .button-secondary {
   background: transparent;
   color: var(--color-primary);
-  border: 1px solid rgba(3, 12, 1, 0.15);
+  border: 1px solid rgb(3 12 1 / 0.15);
 }
 
 .button-secondary:hover,
@@ -200,7 +200,7 @@ body {
 
 .button-secondary:active {
   background: #4e544d;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
   border-color: #4e544d;
 }
@@ -318,7 +318,7 @@ body {
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
   margin-bottom: 48px;
 }
@@ -336,9 +336,7 @@ body {
 }
 
 .mobile-explore-btn {
-  align-self: center;
   width: 100%;
-  max-width: 406px;
   text-align: center;
 }
 
@@ -348,9 +346,11 @@ body {
   position: relative;
   background-color: #f4f6f5;
   background-image: url("../images/rectangle-1.jpg");
-  background-size: auto 100%;
-  background-position: right center;
+  background-size: cover;
+  background-position: calc(100% + 340px) center;
   background-repeat: no-repeat;
+  min-height: 510px;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -359,10 +359,10 @@ body {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(244, 246, 245, 0.95) 35%,
-    rgba(244, 246, 245, 0.6) 55%,
-    rgba(244, 246, 245, 0.2) 75%,
-    transparent 100%
+    #f4f6f5 0%,
+    #f4f6f5 35%,
+    rgb(244 246 245 / 0.75) 50%,
+    transparent 65%
   );
   pointer-events: none;
   z-index: 1;
@@ -378,26 +378,35 @@ body {
 }
 
 .hero-content {
-  max-width: 100%;
+  width: 100%;
 }
 
 .hero-title {
   margin-bottom: 24px;
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  max-width: 243px;
 }
 
 .hero-text-wrapper {
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.hero-text-wrapper .button {
+  width: 100%;
 }
 
 .hero-text {
   margin-bottom: 32px;
   font-size: 18px;
   line-height: 1.5;
+  max-width: 247px;
 }
 
 /* ===== About ===== */
@@ -543,7 +552,7 @@ body {
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
 }
 
 .product-card-image {
@@ -665,7 +674,7 @@ body {
 
 .testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
 }
 
 .testimonial-card-quote {
@@ -937,17 +946,26 @@ body {
 
   /* Hero — tablet */
   .hero {
-    background-size: auto 100%;
-    background-position: right center;
+    background-size: cover;
+    background-position: calc(100% + 80px) center;
+  }
+
+  .hero-text-wrapper {
+    display: block;
+    width: auto;
+  }
+
+  .hero-text-wrapper .button {
+    width: auto;
   }
 
   .hero::before {
     background: linear-gradient(
       to right,
-      rgba(244, 246, 245, 0.95) 30%,
-      rgba(244, 246, 245, 0.6) 50%,
-      rgba(244, 246, 245, 0.15) 70%,
-      transparent 90%
+      #f4f6f5 0%,
+      #f4f6f5 30%,
+      rgb(244 246 245 / 0.65) 45%,
+      transparent 60%
     );
   }
 
@@ -957,7 +975,24 @@ body {
   }
 
   .hero-content {
-    max-width: 375px;
+    max-width: 343px;
+  }
+
+  .hero-title {
+    max-width: none;
+  }
+
+  .hero-text {
+    max-width: none;
+  }
+
+  /* Mobile menu adjustments for tablet */
+  .mobile-explore-btn {
+    display: none;
+  }
+
+  .mobile-nav-list {
+    align-items: center;
   }
 
   /* About — tablet: side by side */
@@ -1074,16 +1109,17 @@ body {
   /* Hero — desktop */
   .hero {
     background-size: cover;
-    background-position: center;
+    background-position: right center;
+    min-height: auto;
   }
 
   .hero::before {
     background: linear-gradient(
       to right,
-      rgba(244, 246, 245, 0.9) 30%,
-      rgba(244, 246, 245, 0.5) 50%,
-      rgba(244, 246, 245, 0.1) 70%,
-      transparent 85%
+      #f4f6f5 0%,
+      #f4f6f5 25%,
+      rgb(244 246 245 / 0.65) 40%,
+      transparent 55%
     );
   }
 
@@ -1098,6 +1134,11 @@ body {
 
   .hero-title {
     font-size: 56px;
+    max-width: none;
+  }
+
+  .hero-text {
+    max-width: none;
   }
 
   /* About — desktop */
