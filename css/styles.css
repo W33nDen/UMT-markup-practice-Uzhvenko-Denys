@@ -245,7 +245,7 @@ body {
 
 .header-nav-link:hover,
 .header-nav-link:focus {
-  color: var(--color-gradient-green);
+  color: var(--color-gradient-yellow);
   opacity: 1;
 }
 
@@ -332,7 +332,7 @@ body {
 
 .mobile-nav-link:hover,
 .mobile-nav-link:focus {
-  color: var(--color-gradient-green);
+  color: var(--color-gradient-yellow);
 }
 
 .mobile-explore-btn {
@@ -840,7 +840,8 @@ body {
 
 .footer-nav-link:hover,
 .footer-nav-link:focus {
-  opacity: 0.6;
+  color: var(--color-gradient-yellow);
+  opacity: 1;
 }
 
 .footer-social-list {
@@ -859,7 +860,7 @@ body {
 
 .footer-social-link:hover,
 .footer-social-link:focus {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .footer-divider {
@@ -887,7 +888,7 @@ body {
 
 .footer-social-link:hover .icon-social,
 .footer-social-link:focus .icon-social {
-  fill: var(--color-gradient-green);
+  fill: var(--color-gradient-yellow);
   transform: scale(1.1);
 }
 
