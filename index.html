@@ -8,14 +8,16 @@
       content="Flora — Brighten Your Day with Our Stunning Bouquets. Expertly crafted flower arrangements for every occasion."
     />
     <title>Flora — Flower Bouquets</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" /></noscript>
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="./images/rectangle-1.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/ttf" href="https://fonts.gstatic.com/s/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0sd5xDs.ttf" crossorigin />
+    <link rel="preload" href="./images/rectangle-1.webp" as="image" fetchpriority="high" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -58,7 +60,7 @@
       <!-- Hero -->
       <section class="hero" id="hero">
         <div class="container hero-container">
-          <div class="hero-content" data-aos="fade-up">
+          <div class="hero-content">
             <h1 class="hero-title">
               Brighten Your Day with Our Stunning Bouquets
             </h1>
@@ -96,7 +98,7 @@
           <img loading='lazy'
             class="about-image"
             data-aos="fade-left"
-            src="./images/elevated-view-female-florist-arranging-white-peony-flowers-shop-large.jpg"
+            src="./images/elevated-view-female-florist-arranging-white-peony-flowers-shop-large.webp"
             width="616"
             alt="Florist arranging white peony flowers in a shop"
           />
@@ -114,7 +116,7 @@
                 <article class="product-card">
                   <img loading='lazy'
                     class="product-card-image"
-                    src="./images/perfect-gift-wonderful-flowers-womens-day-tender-smiling-brunet-woman-holding-front-face-bouquet-spring-flowerspace-text.jpg"
+                    src="./images/perfect-gift-wonderful-flowers-womens-day-tender-smiling-brunet-woman-holding-front-face-bouquet-spring-flowerspace-text.webp"
                     width="405"
                     height="320"
                     alt="Spring Elegance bouquet"
@@ -133,7 +135,7 @@
                 <article class="product-card">
                   <img loading='lazy'
                     class="product-card-image"
-                    src="./images/bridal-arrangement-wedding-flowers-closeup-decoration-roses-flowers-ornamental-plants-closeup.jpg"
+                    src="./images/bridal-arrangement-wedding-flowers-closeup-decoration-roses-flowers-ornamental-plants-closeup.webp"
                     width="405"
                     height="320"
                     alt="Berry Chic bouquet"
@@ -152,7 +154,7 @@
                 <article class="product-card">
                   <img loading='lazy'
                     class="product-card-image"
-                    src="./images/mixed-flower-bouquet-wooden-table.jpg"
+                    src="./images/mixed-flower-bouquet-wooden-table.webp"
                     width="405"
                     height="320"
                     alt="Lavender Dream bouquet"
@@ -171,7 +173,7 @@
                 <article class="product-card">
                   <img loading='lazy'
                     class="product-card-image"
-                    src="./images/mixed-flower-composition-side-view.jpg"
+                    src="./images/mixed-flower-composition-side-view.webp"
                     width="405"
                     height="320"
                     alt="Berry Chic bouquet"
@@ -248,7 +250,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/side-view-rose-bouquet-with-wildflowers-pink-basket.jpg"
+                  src="./images/side-view-rose-bouquet-with-wildflowers-pink-basket.webp"
                   width="302"
                   height="320"
                   alt="Peach Meadow bouquet"
@@ -267,7 +269,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/florist-makes-beautiful-bouquet-studio.jpg"
+                  src="./images/florist-makes-beautiful-bouquet-studio.webp"
                   width="302"
                   height="320"
                   alt="Blush Romance bouquet"
@@ -286,7 +288,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/big-basket-mixed-flowers-standing-table-with-christmas-cones.jpg"
+                  src="./images/big-basket-mixed-flowers-standing-table-with-christmas-cones.webp"
                   width="302"
                   height="320"
                   alt="Pastel Garden bouquet"
@@ -305,7 +307,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/mixed-flower-composition-side-view.jpg"
+                  src="./images/mixed-flower-composition-side-view.webp"
                   width="302"
                   height="320"
                   alt="Tulip Charm bouquet"
@@ -325,7 +327,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/exotic-rustic-bunch-flowers-mixed-colors.jpg"
+                  src="./images/exotic-rustic-bunch-flowers-mixed-colors.webp"
                   width="302"
                   height="320"
                   alt="Berry Bloom bouquet"
@@ -344,7 +346,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/basket-filled-with-assorted-colorful-flowers-notecard.jpg"
+                  src="./images/basket-filled-with-assorted-colorful-flowers-notecard.webp"
                   width="302"
                   height="320"
                   alt="Sweet Whisper bouquet"
@@ -363,7 +365,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/wild-flowers.jpg"
+                  src="./images/wild-flowers.webp"
                   width="302"
                   height="320"
                   alt="Field Joy bouquet"
@@ -382,7 +384,7 @@
               <article class="product-card">
                 <img loading='lazy'
                   class="product-card-image"
-                  src="./images/close-up-bouquet-decorated-vintage-style-dark-background.jpg"
+                  src="./images/close-up-bouquet-decorated-vintage-style-dark-background.webp"
                   width="302"
                   height="320"
                   alt="Soft Bloom bouquet"
@@ -828,7 +830,7 @@
           <img loading='lazy'
             class="contact-image"
             data-aos="fade-left"
-            src="./images/photo-florist-holding-beautiful-flowers-flower-shop.jpg"
+            src="./images/photo-florist-holding-beautiful-flowers-flower-shop.webp"
             width="1280"
             height="720"
             alt="Florist holding a beautiful bouquet of flowers in a flower shop"
@@ -950,9 +952,11 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-      AOS.init({ duration: 800, once: true });
+      window.addEventListener('load', () => {
+        AOS.init({ duration: 800, once: true });
+      });
 
       // Mobile Menu Toggle
       const mobileMenu = document.getElementById("mobile-menu");

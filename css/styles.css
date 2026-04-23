@@ -344,7 +344,7 @@ body {
 .hero {
   position: relative;
   background-color: #f4f6f5;
-  background-image: url("../images/rectangle-1.jpg");
+  background-image: url("../images/rectangle-1.webp");
   background-size: cover;
   background-position: calc(100% + 340px) center;
   background-repeat: no-repeat;
