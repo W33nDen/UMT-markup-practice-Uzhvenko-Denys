@@ -294,12 +294,18 @@ body {
 .hero {
   position: relative;
   background-color: #f4f6f5;
-  background-image: url("../images/rectangle-1.webp");
+  background-image: url("../images/rectangle-1-mobile@1x.webp");
   background-size: cover;
   background-position: calc(100% + 340px) center;
   background-repeat: no-repeat;
   min-height: 510px;
   overflow: hidden;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../images/rectangle-1-mobile@2x.webp");
+  }
 }
 
 .hero::before {
@@ -894,6 +900,7 @@ body {
 
   /* Hero — tablet */
   .hero {
+    background-image: url("../images/rectangle-1-tablet@1x.webp");
     background-size: cover;
     background-position: calc(100% + 80px) center;
   }
@@ -1017,6 +1024,12 @@ body {
   }
 }
 
+@media screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../images/rectangle-1-tablet@2x.webp");
+  }
+}
+
 /* ========================================
    DESKTOP — min-width: 1440px
    ======================================== */
@@ -1056,6 +1069,7 @@ body {
 
   /* Hero — desktop */
   .hero {
+    background-image: url("../images/rectangle-1-desktop@1x.webp");
     background-size: cover;
     background-position: right center;
     min-height: auto;
@@ -1185,5 +1199,11 @@ body {
   .footer-social-list {
     flex: 1;
     justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../images/rectangle-1-desktop@2x.webp");
   }
 }
