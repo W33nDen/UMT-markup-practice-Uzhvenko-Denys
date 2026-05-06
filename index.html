@@ -8,14 +8,41 @@
       content="Flora — Brighten Your Day with Our Stunning Bouquets. Expertly crafted flower arrangements for every occasion."
     />
     <title>Flora — Flower Bouquets</title>
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" /></noscript>
+    <link
+      rel="preload"
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    /></noscript>
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap"></noscript>
-    <link rel="preload" href="./images/rectangle-1-mobile@1x.webp" as="image" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      href="./images/rectangle-1-mobile@1x.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -39,7 +66,9 @@
             <li><a class="header-nav-link" href="#contacts">Contacts</a></li>
           </ul>
 
-          <a class="button header-button" href="#bouquets">Explore Bouquets</a>
+          <button class="button header-button" type="button" data-modal-open>
+            Explore Bouquets
+          </button>
 
           <button
             class="header-menu-button"
@@ -935,7 +964,13 @@
 
           <ul class="footer-social-list">
             <li>
-              <a class="footer-social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a
+                class="footer-social-link"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <svg
                   class="icon-social"
                   width="24"
@@ -947,7 +982,13 @@
               </a>
             </li>
             <li>
-              <a class="footer-social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a
+                class="footer-social-link"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <svg
                   class="icon-social"
                   width="24"
@@ -959,7 +1000,13 @@
               </a>
             </li>
             <li>
-              <a class="footer-social-link" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <a
+                class="footer-social-link"
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+              >
                 <svg
                   class="icon-social"
                   width="24"
@@ -973,11 +1020,128 @@
           </ul>
         </div>
 
+        <div class="footer-subscribe">
+          <p class="footer-subscribe-text">Subscribe to our newsletter</p>
+          <form class="footer-subscribe-form" autocomplete="off">
+            <label class="visually-hidden" for="footer-email">Email</label>
+            <input
+              class="footer-subscribe-input"
+              type="email"
+              id="footer-email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button class="button footer-subscribe-btn" type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
         <hr class="footer-divider" />
 
         <p class="footer-copyright">&copy; 2025 Flora. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Order Modal Backdrop -->
+    <div class="backdrop" id="order-backdrop">
+      <div class="modal">
+        <button
+          class="modal-close-btn"
+          type="button"
+          aria-label="Close modal"
+          id="modal-close-btn"
+        >
+          <svg
+            class="modal-close-icon"
+            width="32"
+            height="32"
+            aria-hidden="true"
+          >
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <h2 class="modal-title">Order</h2>
+
+        <form class="modal-form" autocomplete="off">
+          <div class="modal-field">
+            <label class="modal-label" for="order-name">Name*</label>
+            <input
+              class="modal-input"
+              type="text"
+              id="order-name"
+              name="user-name"
+              placeholder="Ann"
+              required
+            />
+          </div>
+
+          <div class="modal-field">
+            <label class="modal-label" for="order-phone">Phone*</label>
+            <input
+              class="modal-input"
+              type="tel"
+              id="order-phone"
+              name="user-phone"
+              placeholder="+1 (555) 123-4567"
+              required
+            />
+          </div>
+
+          <div class="modal-field">
+            <label class="modal-label" for="order-address">Address</label>
+            <input
+              class="modal-input"
+              type="text"
+              id="order-address"
+              name="user-address"
+              placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+            />
+          </div>
+
+          <div class="modal-field">
+            <label class="modal-label" for="order-message">Message</label>
+            <textarea
+              class="modal-textarea"
+              id="order-message"
+              name="user-message"
+              placeholder="Type your message..."
+            ></textarea>
+          </div>
+
+          <div class="modal-checkbox-wrapper">
+            <input
+              class="modal-checkbox visually-hidden"
+              type="checkbox"
+              id="order-terms"
+              name="user-terms"
+              value="true"
+              required
+            />
+            <label class="modal-checkbox-label" for="order-terms">
+              <span class="modal-checkbox-custom">
+                <svg
+                  class="modal-checkbox-icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              I accept the license agreement
+            </label>
+          </div>
+
+          <button class="button modal-submit-btn" type="submit">
+            Go to Checkout
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobile-menu">
       <div class="container mobile-menu-container">
@@ -1014,15 +1178,15 @@
           <li><a class="mobile-nav-link" href="#contacts">Contacts</a></li>
         </ul>
 
-        <a class="button mobile-explore-btn" href="#bouquets"
-          >Explore Bouquets</a
-        >
+        <button class="button mobile-explore-btn" type="button" data-modal-open>
+          Explore Bouquets
+        </button>
       </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         AOS.init({ duration: 800, once: true });
       });
 
@@ -1031,7 +1195,7 @@
       const openBtn = document.querySelector(".header-menu-button");
       const closeBtn = document.getElementById("menu-close-btn");
       const navLinks = document.querySelectorAll(
-        ".mobile-nav-link, #mobile-home-btn, .mobile-explore-btn",
+        ".mobile-nav-link, #mobile-home-btn",
       );
 
       function openMenu() {
@@ -1049,6 +1213,40 @@
 
       navLinks.forEach((link) => {
         link.addEventListener("click", closeMenu);
+      });
+
+      // Order Modal
+      const backdrop = document.getElementById("order-backdrop");
+      const modalCloseBtn = document.getElementById("modal-close-btn");
+      const modalOpenBtns = document.querySelectorAll("[data-modal-open]");
+
+      function openModal() {
+        mobileMenu.classList.remove("is-open");
+        backdrop.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        backdrop.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      modalOpenBtns.forEach((btn) => {
+        btn.addEventListener("click", openModal);
+      });
+
+      modalCloseBtn.addEventListener("click", closeModal);
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
+          closeModal();
+        }
       });
     </script>
   </body>
