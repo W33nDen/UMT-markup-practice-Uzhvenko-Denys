@@ -41,13 +41,12 @@
       rel="preload"
       href="./images/rectangle-1-mobile@1x.webp"
       as="image"
+      media="(max-width: 767px)"
       fetchpriority="high"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4aCQy560Nypqhzlu02gkmkVZqFkiS02eJtTWeEWeD4A=="
-      crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -209,11 +208,22 @@
             </p>
           </div>
 
+          <form class="bouquets-filter-form" id="bouquets-filter-form" autocomplete="off">
+            <input type="text" name="search" placeholder="Search by name..." class="filter-input">
+            <select name="sort" class="filter-select">
+              <option value="">Default sorting</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+            </select>
+            <button type="submit" class="button filter-btn">Apply</button>
+            <button type="reset" class="button filter-reset-btn">Reset</button>
+          </form>
+
           <ul class="bouquets-list" data-aos="fade-up">
             <!-- Bouquets rendered dynamically by js/app.js -->
           </ul>
 
-          <a class="button bouquets-button" href="#">Show More</a>
+          <button class="button bouquets-button" id="load-more-bouquets" type="button">Show More</button>
         </div>
       </section>
 

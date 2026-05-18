@@ -425,8 +425,13 @@ body {
 	margin-bottom: 48px;
 	display: flex;
 	gap: 24px;
-	overflow: hidden;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width: none; /* Firefox */
 	width: 100%;
+}
+.bestsellers-list::-webkit-scrollbar {
+	display: none; /* Chrome, Safari */
 }
 
 .bestsellers-item {
@@ -558,6 +563,65 @@ body {
 .bouquets-text {
 	font-size: 18px;
 	line-height: 1.5;
+}
+
+.bouquets-filter-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	margin-bottom: 32px;
+}
+
+.filter-input,
+.filter-select {
+	padding: 8px 16px;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: inherit;
+	color: var(--color-primary);
+	background-color: var(--color-white);
+	border: 1px solid rgb(3 12 1 / 0.15);
+	border-radius: 100px;
+	outline: none;
+	transition:
+		border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-input:focus,
+.filter-select:focus {
+	border-color: var(--color-gradient-green);
+	box-shadow: 0 0 0 1px var(--color-gradient-green);
+}
+
+.filter-btn,
+.filter-reset-btn {
+	padding: 8px 24px;
+	border-radius: 100px;
+	font-size: 16px;
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover,
+.filter-btn:focus,
+.filter-reset-btn:hover,
+.filter-reset-btn:focus {
+	background-color: #4e544d;
+}
+
+.filter-reset-btn {
+	background-color: transparent;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+.filter-reset-btn:hover,
+.filter-reset-btn:focus {
+	background-color: #f4f6f5;
+	color: var(--color-primary);
 }
 
 .bouquets-list {
