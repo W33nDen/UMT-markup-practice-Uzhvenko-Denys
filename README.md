@@ -5,7 +5,6 @@
 ## 🔗 Посилання на проєкт
 
 *   **Жива сторінка (GitHub Pages):** [https://w33nden.github.io/UMT-markup-practice-Uzhvenko-Denys/](https://w33nden.github.io/UMT-markup-practice-Uzhvenko-Denys/)
-    *(Завдяки вбудованому інтелектуальному клієнтському fallback-режиму, жива версія на GitHub Pages повністю функціональна: пагінація, фільтри, сортування та пошук працюють прямо в браузері без необхідності запуску локального сервера!)*
 
 ---
 
