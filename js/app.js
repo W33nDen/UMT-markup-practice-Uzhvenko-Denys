@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/flowers";
+const API_URL = "http://localhost:3000/api/bouquets";
 
 let useFallback = false;
 
