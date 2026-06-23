@@ -1,18 +1,34 @@
-const API_URL = "http://localhost:3000/api/bouquets";
+const BACKEND_URL = "https://flora-backend.onrender.com";
+const LOCAL_URL = "http://localhost:3000";
+
+// Use local backend when running on localhost, otherwise use deployed Render backend
+const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const API_URL = (isLocal ? LOCAL_URL : BACKEND_URL) + "/api/bouquets";
 
 let useFallback = false;
 
 async function customFetch(urlStr) {
-	if (!useFallback && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
+	// On production (GitHub Pages) — always use the Render backend directly
+	if (!isLocal) {
 		try {
 			return await axios.get(urlStr);
 		} catch (e) {
-			console.warn("Local json-server not reachable, switching to client-side fallback using db.json.", e.message);
+			console.error("Backend API error:", e.message);
+			throw e;
+		}
+	}
+
+	// On localhost — try local backend first, then fallback to db.json
+	if (!useFallback) {
+		try {
+			return await axios.get(urlStr);
+		} catch (e) {
+			console.warn("Local backend not reachable, switching to client-side fallback using db.json.", e.message);
 			useFallback = true;
 		}
 	}
 
-	// Fetch database file directly from current web server root
+	// Fallback: fetch database file directly from current web server root
 	const dbResponse = await axios.get("./db.json");
 	const allFlowers = dbResponse.data.flowers || [];
 
