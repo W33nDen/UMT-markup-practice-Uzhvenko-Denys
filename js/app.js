@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://flora-backend.onrender.com";
+const BACKEND_URL = "https://flora-backend-ejkc.onrender.com";
 const LOCAL_URL = "http://localhost:3000";
 
 // Use local backend when running on localhost, otherwise use deployed Render backend
