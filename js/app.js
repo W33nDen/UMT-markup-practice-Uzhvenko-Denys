@@ -104,6 +104,7 @@ const productModalPrice = document.getElementById("product-modal-price");
 const productModalDesc = document.getElementById("product-modal-desc");
 
 let allFlowers = [];
+let selectedFlowerId = null;
 
 // Placeholder SVG for broken images (inline data URI)
 const PLACEHOLDER_IMG =
@@ -276,6 +277,7 @@ async function fetchBouquetsPage(page = 1) {
 
 // Modal logic
 function openProductModal(flower) {
+	selectedFlowerId = flower.id;
 	const resolvedImg = resolveImgPath(flower.img);
 	productModalImg.src = resolvedImg;
 	productModalImg.srcset = `${resolvedImg} 1x, ${resolvedImg} 2x`;
@@ -362,6 +364,59 @@ if (loadMoreBtn) {
 
 fetchBestsellers();
 fetchBouquetsPage(currentBouquetsPage);
+
+// ==============================
+// Order Form Integration
+// ==============================
+const orderForm = document.querySelector(".modal-form");
+if (orderForm) {
+	orderForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+
+		const name = orderForm.elements["user-name"].value.trim();
+		let phone = orderForm.elements["user-phone"].value.trim();
+
+		// Sanitize phone number (keep digits only)
+		phone = phone.replace(/\D/g, "");
+		if (phone.length === 10) {
+			phone = "38" + phone;
+		}
+
+		if (phone.length !== 12) {
+			alert("Please enter a valid phone number with 12 digits (e.g., 380961234567)");
+			return;
+		}
+
+		const address = orderForm.elements["user-address"].value.trim() || "No address provided";
+		const message = orderForm.elements["user-message"].value.trim() || "No message provided";
+		const modelId = String(selectedFlowerId || 1); // fallback to ID 1 if not selected from details modal
+
+		try {
+			const response = await axios.post((isLocal ? LOCAL_URL : BACKEND_URL) + "/api/orders", {
+				name,
+				phone,
+				address,
+				message,
+				modelId,
+			});
+
+			alert(`Order successfully placed!\nOrder number: ${response.data.orderNum}\nModel: ${response.data.model}`);
+			orderForm.reset();
+
+			// Close order modal
+			const backdrop = document.getElementById("order-backdrop");
+			if (backdrop) {
+				backdrop.classList.remove("is-open");
+			}
+			document.body.style.overflow = "";
+			selectedFlowerId = null;
+		} catch (error) {
+			console.error("Order submission failed:", error);
+			const errorMsg = error.response?.data?.message || error.message;
+			alert(`Failed to place order: ${errorMsg}`);
+		}
+	});
+}
 
 // ==============================
 // Slider Logic for Bestsellers (with infinite loop)
