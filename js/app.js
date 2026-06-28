@@ -105,6 +105,10 @@ const productModalDesc = document.getElementById("product-modal-desc");
 
 let allFlowers = [];
 let selectedFlowerId = null;
+let selectedQuantity = 1;
+
+// Loader markup shown while data is fetching
+const LOADER_HTML = `<li class="loader-wrapper"><span class="loader"></span></li>`;
 
 // Placeholder SVG for broken images (inline data URI)
 const PLACEHOLDER_IMG =
@@ -194,6 +198,7 @@ let currentSearch = "";
 let currentSort = "";
 
 async function fetchBestsellers() {
+	bestsellersListEl.innerHTML = LOADER_HTML;
 	try {
 		const response = await customFetch(`${API_URL}?category=top`);
 		const itemsArray = Array.isArray(response.data)
@@ -214,6 +219,9 @@ async function fetchBestsellers() {
 }
 
 async function fetchBouquetsPage(page = 1) {
+	if (page === 1) {
+		bouquetsListEl.innerHTML = LOADER_HTML;
+	}
 	try {
 		const url = new URL(API_URL);
 		url.searchParams.append("category", "standart");
@@ -291,8 +299,21 @@ function openProductModal(flower) {
 	productModalPrice.textContent = `$${flower.price}`;
 	productModalDesc.textContent = flower.desc;
 
+	// Reset quantity input to 1
+	const qtyInput = document.querySelector(".product-modal-qty");
+	if (qtyInput) qtyInput.value = 1;
+
 	productBackdrop.classList.add("is-open");
 	document.body.style.overflow = "hidden";
+}
+
+// Capture quantity when "Buy now" is clicked (before product modal closes)
+const buyNowBtn = document.querySelector(".product-modal-buy-btn");
+if (buyNowBtn) {
+	buyNowBtn.addEventListener("click", () => {
+		const qtyInput = document.querySelector(".product-modal-qty");
+		selectedQuantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+	});
 }
 
 function closeProductModal() {
@@ -390,6 +411,7 @@ if (orderForm) {
 		const address = orderForm.elements["user-address"].value.trim() || "No address provided";
 		const message = orderForm.elements["user-message"].value.trim() || "No message provided";
 		const modelId = String(selectedFlowerId || 1); // fallback to ID 1 if not selected from details modal
+		const quantity = selectedQuantity || 1;
 
 		try {
 			const response = await axios.post((isLocal ? LOCAL_URL : BACKEND_URL) + "/api/orders", {
@@ -398,6 +420,7 @@ if (orderForm) {
 				address,
 				message,
 				modelId,
+				quantity,
 			});
 
 			alert(`Order successfully placed!\nOrder number: ${response.data.orderNum}\nModel: ${response.data.model}`);
@@ -410,6 +433,7 @@ if (orderForm) {
 			}
 			document.body.style.overflow = "";
 			selectedFlowerId = null;
+			selectedQuantity = 1;
 		} catch (error) {
 			console.error("Order submission failed:", error);
 			const errorMsg = error.response?.data?.message || error.message;

@@ -1681,3 +1681,33 @@ body {
 		background-image: url("../images/rectangle-1-desktop@2x.webp");
 	}
 }
+
+/* ===== Loader Spinner ===== */
+
+.loader-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 320px;
+	list-style: none;
+}
+
+.loader {
+	width: 48px;
+	height: 48px;
+	border: 4px solid var(--color-primary, #030c01);
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
